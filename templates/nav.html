@@ -1,0 +1,12 @@
+<div class="outer-box">
+    <div id='top'>
+        <nav class="nav">
+        <ul>
+            <li><a href="/">贷成的博客</a></li>
+        {% for category in categories %}
+            <li><a href="/?cate={{ category }}">{{ category }}</a></li>
+        {% endfor %}
+        </ul>
+        </nav>
+    </div>
+</div>

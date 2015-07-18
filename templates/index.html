@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {{ renderPager(cate,totalnum,pnum)|safe }}
+    {% for post in posts %}
+    <div class="post-cell">
+        <a href="/{{ post.path }}.html">[{{ post.category }}]{{ post.title }}</a>
+    </div>
+    {% endfor %}
+    {{ renderPager(cate,totalnum,pnum)|safe }}
+    {{ postcontent|safe }}
+{% endblock content %}
