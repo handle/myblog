@@ -26,45 +26,45 @@ CountDownLatch是一个计数器闭锁，主要的功能就是通过await()方�
 
 1.  主线程控制同时启动一组线程
 
-    final CountDownLatch count = new CountDownLatch(1);
-    for (int i = 0; i < 3; i++) {
-        new Thread("Thread" + i) {
-            public void run() {
-                System.out.println(Thread.currentThread().getName() + " wait");
-                try {
-                    count.await();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println(Thread.currentThread().getName() + " start");
-            }
-        }.start();
-    }
-    //等等三秒，否则有可能3个线程并没有全部进行await状态
-    try {
-        Thread.sleep(3000);
-    } catch (InterruptedException e) {
-        e.printStackTrace();
-    }
-    count.countDown();
+		final CountDownLatch count = new CountDownLatch(1);
+    	for (int i = 0; i < 3; i++) {
+        	new Thread("Thread" + i) {
+            	public void run() {
+                	System.out.println(Thread.currentThread().getName() + " wait");
+                	try {
+                    	count.await();
+                	} catch (InterruptedException e) {
+                    	e.printStackTrace();
+                	}
+                	System.out.println(Thread.currentThread().getName() + " start");
+            	}
+        	}.start();
+    	}
+    	//等等三秒，否则有可能3个线程并没有全部进行await状态
+    	try {
+        	Thread.sleep(3000);
+    	} catch (InterruptedException e) {
+        	e.printStackTrace();
+    	}
+    	count.countDown();
 
 2.  主线程等待各子线程全部执行完毕后再往下执行:
 
-    final CountDownLatch count = new CountDownLatch(3);
-    for (int i = 0; i < 3; i++) {
-        new Thread("Thread" + i) {
-            public void run() {
-                System.out.println(Thread.currentThread().getName() + " start");
-                count.countDown();
-            }
-        }.start();
-    }
-    try {
-        count.await();
-    } catch (InterruptedException e) {
-        e.printStackTrace();
-    }
-    System.out.println("All end!!!");
+    	final CountDownLatch count = new CountDownLatch(3);
+    	for (int i = 0; i < 3; i++) {
+        	new Thread("Thread" + i) {
+            	public void run() {
+                	System.out.println(Thread.currentThread().getName() + " start");
+                	count.countDown();
+            	}
+        	}.start();
+    	}
+    	try {
+        	count.await();
+    	} catch (InterruptedException e) {
+        	e.printStackTrace();
+    	}
+    	System.out.println("All end!!!");
 
 ### Semaphore
 Semaphore与CountDownLatch相似，不同的地方在于Semaphore的值被获取到后是可以释放的，并不像CountDownLatch那样一直减到底。它也被更多地用来限制流量，类似阀门的
