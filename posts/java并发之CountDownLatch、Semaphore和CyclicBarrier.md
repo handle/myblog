@@ -1,6 +1,6 @@
 title: java并发之CountDownLatch、Semaphore和CyclicBarrier
 date: 2013-06-03 12:00
-category: Java
+category: 编程艺术
 tags: 沧海拾遗
 
 JAVA并发包中有三个类用于同步一批线程的行为，分别是CountDownLatch、Semaphore和CyclicBarrier。

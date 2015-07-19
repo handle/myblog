@@ -1,6 +1,6 @@
 title: java并发之Executor
 date: 2013-06-05 12:00
-category: Java
+category: 编程艺术
 tags: 沧海拾遗
 
 java自1.5以来加入了处理一批线程的方法，也就是java并发包里的Executor。本文主要介绍ExecutorService的用法，Runable和Callable的用法以及ExecutorCompletionService的用法。
