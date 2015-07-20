@@ -20,7 +20,7 @@ def page(path):
 
 @app.route("/")
 def index():
-    pagesize=app.config.get("pagesize",2)
+    pagesize=app.config.get("FLATPAGES_ROOT_SIZE",2)
     pp = request.args.get('p', '1')
     page = int(pp)
     if page<=0:
@@ -44,7 +44,7 @@ def contextUtil():
         cates.sort()
         return render_template('nav.html',categories=cates)
     def renderPager(cate,total,page):
-        pagesize=app.config.get("pagesize",2)
+        pagesize=app.config.get("FLATPAGES_ROOT_SIZE",2)
         pager={}
         pager['cur']=page
         pager['former']=page-1
@@ -59,4 +59,4 @@ def contextUtil():
     return dict(renderNav=renderNav,renderPager=renderPager)
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1',port=8080)
+    app.run(host='127.0.0.1',port=8080,debug=True)

@@ -8,60 +8,19 @@
 <body>
 <style>
 body{
-    width:970px;
     margin:0 auto 0 auto;
     padding:0 10px 0 10px;
     font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
 }
-.outer-box{
-    background-color: #e2e2e2;
-    background-image: url("http://www.v2ex.com/static/img/shadow_light.png");
-    background-repeat: repeat-x;
-    overflow:hidden;
-    margin-top:1em;
-}
-#top{
+.content-top{
     margin:1px;
     overflow:hidden;
 }
-#top h1{
-    line-height:2em;
-    float:left;
-}
-nav{
-    float:left;
-    line-height:2em;
-    text-align:center;
-    width:100%;
-    background: -webkit-linear-gradient(top,gray,black);
-}
-nav ul{
-    list-style-type:none;
-    padding:0;
-    overflow:hidden;
-    width:100%;
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-}
-nav li{
-    float:left;
-    width:15%;
-}
-nav a{
-    width:100%;
-    color:white;
-    text-align: left;
-}
-nav a:link,a:visited{
-    display:block;
-    font-weight:bold;
-    text-align:left;
-    padding:5px 0 5px 5px;
-    text-decoration:none;
-    text-transform:uppercase;
-}
-nav a:hover,a:active{
-    background-color:grey;
+.content-top h1{
+    line-height: 2em;
+    float: left;
+    font-size: 2em;
+    font-weight: bold;
 }
 #article{
     margin:1px;
@@ -83,7 +42,7 @@ nav a:hover,a:active{
 }
 .post-cell{
     font-size: 1em;
-    line-height: 2em;
+    line-height: 4em;
     text-align: left;
     background-color:white;
     border: 1px solid #e2e2e2;
@@ -91,9 +50,13 @@ nav a:hover,a:active{
 .post-cell a{
     width:100%;
     text-align: left;
+    margin-left: 1em;
+}
+.post-cell label{
+    float:right;
+    margin-right: 1em;
 }
 .post-cell a:link,a:visited{
-    display:block;
     font-weight:bold;
     text-align:left;
     padding:5px 0 5px 5px;
@@ -106,6 +69,12 @@ nav a:hover,a:active{
 .inner{
     line-height: 2em;
     background-color: white;
+}
+.outer-box {
+  display: block;
+  float: left;
+  margin-left: 30.4118%;
+  width: 68.5882%;
 }
 </style>
 {{ renderNav()|safe }}
