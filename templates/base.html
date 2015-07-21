@@ -3,6 +3,7 @@
 <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ pagetitle }}</title>
 </head>
 <body>
@@ -19,7 +20,7 @@ body{
 .content-top h1{
     line-height: 2em;
     float: left;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 #article{
@@ -50,11 +51,25 @@ body{
 .post-cell a{
     width:100%;
     text-align: left;
-    margin-left: 1em;
+    margin-left: 0;
 }
 .post-cell label{
-    float:right;
-    margin-right: 1em;
+    margin-left: 0.5em;
+    display:block;
+    line-height:1.5em;
+}
+@media screen and (min-width: 38.75em) {
+    .post-cell a{
+        width:100%;
+        text-align: left;
+        margin-left: 1em;
+    }
+    .post-cell label{
+        float:right;
+        margin-right: 1em;
+        display:block;
+        line-height:4em;
+    }
 }
 .post-cell a:link,a:visited{
     font-weight:bold;
@@ -70,15 +85,9 @@ body{
     line-height: 2em;
     background-color: white;
 }
-.outer-box {
-  display: block;
-  float: left;
-  margin-left: 30.4118%;
-  width: 68.5882%;
-}
 </style>
 {{ renderNav()|safe }}
-<div class="outer-box">
+<div class="site-content">
     {% block content %}
         <p>Default content to be displayed</p>
     {% endblock content %}
