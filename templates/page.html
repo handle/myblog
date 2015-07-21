@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-
 {% block content %}
+<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
     <div id="article">
     <div class="content-top">
         <h1>[{{ page.category }}]{{ page.title }}</h1>
@@ -8,4 +8,8 @@
     </div>
     {{ postcontent|safe }}
     </div>
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
 {% endblock content %}
