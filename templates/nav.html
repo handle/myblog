@@ -12,9 +12,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-        <li class="active"><a href="/category/articles">home</a></li>
+        <li {% if request.args.get('cate','')=='' %}class="active"{% endif %}><a href="/">home</a></li>
         {% for cate in categories %}
-        <li class=""><a href="/?cate={{ cate }}">{{ cate }}</a></li>
+        <li {% if request.args.get('cate','')==cate %}class="active"{% endif %}><a href="/?cate={{ cate }}">{{ cate }}</a></li>
         {% endfor %}
         </ul>
 </div><!-- /.navbar-collapse -->

@@ -1,12 +1,19 @@
 <ul class="pager">
-            
-            {% if pager.former>0 %}
-            <li class="previous"><a href="/">Previous</a></li>
-            {% endif %}
-            {% if pager.all>1 %}
-            <td width="auto" align="center"><span class="fade">{{ pager.cur }}/{{ pager.all }} · 共有 {{ pager.total }} 个主题</span></td>
-            {% endif %}
-            {% if pager.next>0 %}
-            <li class="next"><a href="/category/articles/page/2">Next</a></li>
-            {% endif %}
+    {% set curpage = request.args.get('p','1') | int %}
+    {% set totalposts = totalnum | int %}
+    {% set formerpage = curpage-1 %}
+    {% if formerpage>0 %}
+    <li class="previous"><a href="/?cate={{ request.args.get('cate','') }}&p={{ formerpage }}">Previous</a></li>
+    {% endif %}
+    {% set totalpages = totalposts/10|int %}
+    {% if totalposts%10 > 0 %}
+    {% set totalpages = totalpages+1 %}
+    {% endif %}
+    {% if totalpages>1 %}
+    <td width="auto" align="center"><span>{{ curpage }}/{{ totalpages|int }} · 共有 {{ totalposts }} 个主题</span></td>
+    {% endif %}
+    {% set nextpage = curpage+1 %}
+    {% if nextpage<=totalpages %}
+    <li class="next"><a href="/?cate={{ request.args.get('cate','') }}&p={{ nextpage }}">Next</a></li>
+    {% endif %}
 </ul>

@@ -32,7 +32,7 @@ def index():
     pagetitle=""
     if cate<> '':
         pagetitle=cate
-    return render_template('index.html',pagetitle=pagetitle,posts=posts[start:end],pnum=page,totalnum=total,cate=cate)
+    return render_template('index.html',pagetitle=pagetitle,posts=posts[start:end],totalnum=total)
 
 @app.context_processor
 def contextUtil():
@@ -40,24 +40,11 @@ def contextUtil():
         cates = [p['category'].strip() for p in pages if( 'category' in p.meta and p['category'] is not None) ]
         cates = list(set(cates))
         cates.sort()
-        return render_template('nav.html',categories=cates)
-    def renderPager(cate,total,page):
-        pagesize=app.config.get("FLATPAGES_ROOT_SIZE",2)
-        pager={}
-        pager['cur']=page
-        pager['former']=page-1
-        pager['next']=page+1
-        if total <= page*pagesize:
-            pager['next']=0
-        pager['total']=total
-        pager['all']=total/pagesize
-        if total%pagesize >0:
-            pager['all']=pager['all']+1
-        return render_template('pager.html',pager=pager,cate=cate)
+        return render_template('nav.html',categories=cates,curcate = request.args.get('cate', ''))
     def getTags(tagstr):
         fixed_tags = tagstr.split(',')
         return [ tag.strip() for tag in fixed_tags]
-    return dict(renderNav=renderNav,renderPager=renderPager,getTags=getTags)
+    return dict(renderNav=renderNav,getTags=getTags)
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1',port=8080,debug=True)
