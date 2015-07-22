@@ -2,13 +2,22 @@
 
 {% block content %}
 
-    {{ renderPager(cate,totalnum,pnum)|safe }}
-    {% for post in posts %}
-    <div class="post-cell">
-        <a href="/{{ post.path }}.html">[{{ post.category }}]{{ post.title }}</a>
-        <label>{{ post.date }}</label>
+<div class="post-list">
+	{% for post in posts %}
+    <div class="post-summary">
+        <h3 class="title">
+            <a href="/{{ post.path }}.html">{{ post.title }}</a>
+        </h3>
+        <div class="content"><div class="p_part"><p>{{ post.body[:100] }}...</p></div></div>
+        <p class="meta">
+            <span class="glyphicon glyphicon-inbox"></span> {{ post.category }} ·
+            {% for fixed_tag in getTags(post.tags) %}
+            <span class="tag">{{ fixed_tag }}</span>
+            {% endfor %}
+            
+            · Published @ <abbr title="{{ post.date }}">{{ post.date }}</abbr>
+        </p>
     </div>
     {% endfor %}
-    {{ renderPager(cate,totalnum,pnum)|safe }}
-    {{ postcontent|safe }}
+</div>
 {% endblock content %}

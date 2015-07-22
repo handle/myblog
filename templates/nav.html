@@ -1,53 +1,21 @@
-<div id="sidebar" class="sidebar">
-    <header id="masthead" class="site-header" role="banner">
-        <div class="site-branding">
-            <h1 class="site-title"><a href="/" rel="home">贷成的博客</a></h1>
-            <p class="site-description">夫唯道，善贷且成！</p>
-            <button class="secondary-toggle" id="show-btn">菜单和挂件</button>
-        </div>
-    </header>
-    <div id="secondary" class="secondary">
-        <nav id="site-navigation" class="main-navigation" role="navigation">
-            <div class="menu-menu-container">
-                <ul id="menu-menu" class="nav-menu">
-                    {% for cate in categories %}
-                    <li id="menu-item-3844" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3844"><a href="/?cate={{ cate }}">{{ cate }}</a></li>
-                    {% endfor %}
-                </ul></div>
-        </nav>
+<nav id="navbar" class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
     </div>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function(event) {
-    var button = document.getElementById('show-btn');
-    var addAttr = function(dom,attrname,attrvalue){
-        var att = document.createAttribute(attrname);
-        att.value = attrvalue;
-        dom.setAttributeNode(att);
-    };
-    var secondary = document.getElementById('secondary');
-    if ( 955 > window.screen.width ) {
-        addAttr(button , 'aria-expanded', 'false' );
-        addAttr(secondary ,'aria-expanded', 'false' );
-        addAttr(button,'aria-controls', 'secondary' );
-    } else {
-        button.removeAttribute( 'aria-expanded' );
-        secondary.removeAttribute( 'aria-expanded' );
-        button.removeAttribute( 'aria-controls' );
-    }
-    button.onclick = function() {
-        secondary.classList.toggle( 'toggled-on' );
-        if(955 > window.screen.width){
-            document.getElementById('sidebar').removeAttribute( 'style' );
-        }
-        this.classList.toggle( 'toggled-on' );
-        if ( secondary.classList.contains( 'toggled-on' ) ) {
-            addAttr(this, 'aria-expanded', 'true' );
-            addAttr(secondary,'aria-expanded', 'true' );
-        } else {
-            addAttr(this,'aria-expanded', 'false' );
-            addAttr(secondary,'aria-expanded', 'false' );
-        }
-    };
-});
-</script>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+        <li class="active"><a href="/category/articles">home</a></li>
+        {% for cate in categories %}
+        <li class=""><a href="/?cate={{ cate }}">{{ cate }}</a></li>
+        {% endfor %}
+        </ul>
+</div><!-- /.navbar-collapse -->
+</nav>

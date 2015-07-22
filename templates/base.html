@@ -1,96 +1,70 @@
-<!doctype html>
-<html>
+
+<!DOCTYPE html>
+<html lang="zh-cn">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ pagetitle }}</title>
-    <link rel="profile" href="http://www.dglives.com/wp-content/themes/twentyfifteen/style.css?ver=4.2.2">
-</head>
-<body>
-<style>
-body{
-    margin:0 auto 0 auto;
-    padding:0 10px 0 10px;
-    font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
-}
-.content-top{
-    margin:1px;
-    overflow:hidden;
-}
-.content-top h1{
-    line-height: 2em;
-    float: left;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-#article{
-    margin:1px;
-    padding: 5px;
-    background-color: #fff;
-    border-radius: 3px;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
-}
-.content-top{
-    border-bottom: 1px solid #e2e2e2;
-}
-#article h2{
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 1.5em;
-}
-#article h4{
-    color:grey;
-}
-.post-cell{
-    font-size: 1em;
-    line-height: 4em;
-    text-align: left;
-    background-color:white;
-    border: 1px solid #e2e2e2;
-}
-.post-cell a{
-    width:100%;
-    text-align: left;
-    margin-left: 0;
-}
-.post-cell label{
-    margin-left: 0.5em;
-    display:block;
-    line-height:1.5em;
-}
-@media screen and (min-width: 38.75em) {
-    .post-cell a{
-        width:100%;
-        text-align: left;
-        margin-left: 1em;
-    }
-    .post-cell label{
-        float:right;
-        margin-right: 1em;
-        display:block;
-        line-height:4em;
-    }
-}
-.post-cell a:link,a:visited{
-    font-weight:bold;
-    text-align:left;
-    padding:5px 0 5px 5px;
-    text-decoration:none;
-    text-transform:uppercase;
-}
-.post-cell a:hover,a:active{
-    background-color:silver;
-}
-.inner{
-    line-height: 2em;
-    background-color: white;
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="//graycarl.me/template/hhb-icon.png" type="image/png">
+<title> 文章列表  - Hongbo He</title>
+
+<!-- Bootstrap -->
+<!--
+<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+-->
+<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/paper/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+@font-face {
+  font-family: 'Racing Sans One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Racing Sans One'), local('RacingSansOne-Regular'), url(//graycarl.me/template/racing-sans-one.woff) format('woff');
 }
 </style>
+<link href="//graycarl.me/template/yue.css" rel="stylesheet">
+<link href="//graycarl.me/template/style.less" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+ 
+</head>
+<body>
+<div id="wrapper" class="container">
+
+    <header id="banner">
+        <hgroup>
+        <h1><a href="/">贷成的博客</a></h1>
+        <p><p>夫唯道，善贷且成！</p></p>
+        </hgroup>
+    </header>
+
 {{ renderNav()|safe }}
-<div class="site-content">
-    {% block content %}
+
+{% block content %}
         <p>Default content to be displayed</p>
-    {% endblock content %}
+{% endblock content %}
+
+
+
+    <div id="footer">
+        <div class="powered_by">
+            <span>Powered by</span>
+            <a href="http://www.farbox.com" target="_blank">FarBox.com</a> |
+            <a href="/admin">Admin</a>
+            <span>@ 2014 大灰狼</span>
+        </div>
+    </div>
+
 </div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>

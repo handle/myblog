@@ -13,10 +13,12 @@ app.config.from_pyfile("blog.conf", silent=True)
 def page(path):
     post = pages.get_or_404(path)
     html=markdown.markdown(post.body)
-    fixed_tags = post['tags'].split(',')
-    fixed_tags = [ tag.strip() for tag in fixed_tags]
     pagetitle = post['title']
-    return render_template('page.html', pagetitle=pagetitle,postcontent=html,page=post,fixed_tags=fixed_tags)
+    return render_template('page.html', pagetitle=pagetitle,postcontent=html,post=post)
+
+@app.route("/test.html")
+def test():
+    return render_template('test.html')
 
 @app.route("/")
 def index():
@@ -56,7 +58,10 @@ def contextUtil():
         if total%pagesize >0:
             pager['all']=pager['all']+1
         return render_template('pager.html',pager=pager,cate=cate)
-    return dict(renderNav=renderNav,renderPager=renderPager)
+    def getTags(tagstr):
+        fixed_tags = tagstr.split(',')
+        return [ tag.strip() for tag in fixed_tags]
+    return dict(renderNav=renderNav,renderPager=renderPager,getTags=getTags)
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1',port=8080,debug=True)
