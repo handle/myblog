@@ -1,0 +1,263 @@
+/**
+ * yue.css
+ *
+ * yue.css is designed for readable content.
+ *
+ * Copyright (c) 2013 - 2014 by Hsiaoming Yang.
+ */
+
+/* 把yue修改为post */
+
+.post {
+  font: 400 16px/1.62 "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+  color: #444443;
+}
+.windows .post {
+  font-size: 16px;
+  font-family: "Georgia", "SimSun", sans-serif;
+}
+.post ::-moz-selection {
+  background-color: rgba(0,0,0,0.2);
+}
+.post ::selection {
+  background-color: rgba(0,0,0,0.2);
+}
+.post h1,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
+  font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "SimSun", sans-serif;
+  color: #222223;
+}
+.post h1 {
+  font-size: 1.8em;
+  margin: 0.67em 0;
+}
+.post > h1 {
+  margin-top: 0;
+  font-size: 2em;
+}
+.post h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+.post h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+.post h4,
+.post h5,
+.post h6 {
+  font-size: 1em;
+  margin: 1.6em 0 1em 0;
+}
+.post h6 {
+  font-weight: 500;
+}
+.post p {
+  margin-top: 0;
+  margin-bottom: 1.46em;
+}
+.post a {
+  color: #111;
+  word-wrap: break-word;
+  -moz-text-decoration-color: rgba(0, 0, 0, 0.4);
+  text-decoration-color: rgba(0, 0, 0, 0.4);
+}
+.post a:hover {
+  color: #555;
+  -moz-text-decoration-color: rgba(0, 0, 0, 0.6);
+  text-decoration-color: rgba(0, 0, 0, 0.6);
+}
+.post strong,
+.post b {
+  font-weight: 700;
+  color: #222;
+}
+.post em,
+.post i {
+  font-style: italic;
+  color: #222;
+}
+.post img {
+  max-width: 100%;
+  height: auto;
+  margin: 0.2em 0;
+}
+.post a img {
+  /* Remove border on IE */
+  border: none;
+}
+.post figure {
+  position: relative;
+  clear: both;
+  outline: 0;
+  margin: 10px 0 30px;
+  padding: 0;
+  min-height: 100px;
+}
+.post figure img {
+  display: block;
+  max-width: 100%;
+  margin: auto auto 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.post figure figcaption {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #666665;
+}
+.post figure figcaption a {
+  text-decoration: none;
+  color: #666665;
+}
+.post hr {
+  display: block;
+  width: 14%;
+  margin: 40px auto 34px;
+  border: 0 none;
+  border-top: 3px solid #dededc;
+}
+.post blockquote {
+  margin: 0 0 1.64em 0;
+  border-left: 3px solid #dadada;
+  padding-left: 12px;
+  color: #666664;
+  font-size: 100%;
+}
+.post blockquote a {
+  color: #666664;
+}
+.post ul,
+.post ol {
+  margin: 0 0 24px 6px;
+  padding-left: 16px;
+}
+.post ul {
+  list-style-type: square;
+}
+.post ol {
+  list-style-type: decimal;
+}
+.post li {
+  margin-bottom: 0.2em;
+}
+.post li ul,
+.post li ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 14px;
+}
+.post li ul {
+  list-style-type: disc;
+}
+.post li ul ul {
+  list-style-type: circle;
+}
+.post li p {
+  margin: 0.4em 0 0.6em;
+}
+.post .unstyled {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.post code,
+.post tt {
+  color: #808080;
+  font-size: 0.96em;
+  background-color: #f9f9f7;
+  padding: 1px 2px;
+  border: 1px solid #dadada;
+  border-radius: 3px;
+  font-family: "Inconsolata", "Menlo", monospace;
+}
+.post pre {
+  margin: 1.64em 0;
+  padding: 7px;
+  border: none;
+  border-left: 3px solid #dadada;
+  padding-left: 10px;
+  overflow: auto;
+  line-height: 1.5;
+  font-size: 0.96em;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  color: #4c4c4c;
+  background-color: #f9f9f7;
+}
+.post pre code,
+.post pre tt {
+  color: #4c4c4c;
+  border: none;
+  background: none;
+  padding: 0;
+}
+.post table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 1.5em;
+  font-size: 0.96em;
+}
+.post th,
+.post td {
+  text-align: left;
+  padding: 4px 8px 4px 10px;
+  border: 1px solid #dadada;
+}
+.post td {
+  vertical-align: top;
+}
+.post tr:nth-child(even) {
+  background-color: #efefee;
+}
+.post iframe {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+.post figure iframe {
+  margin: auto;
+}
+.post table pre {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.post .entry-meta {
+    font-family: Optima, Georgia, "Xin Gothic", "Hiragino Sans GB", "WenQuanYi Micro Hei", serif;
+    font-size: 14px;
+    color: #9a9a9a;
+    margin: .6em 0
+}
+
+.post .entry-meta a {
+    color: #9a9a9a;
+    text-decoration: none
+}
+
+.post .entry-meta a:hover {
+    text-decoration: underline
+}
+
+.post .entry-title a {
+    text-decoration: none
+}
+
+/* 大屏增大字体 */
+@media (min-width: 640px) {
+  .post {
+    font-size: 18px;
+  }
+}
