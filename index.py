@@ -16,10 +16,6 @@ def page(path):
     pagetitle = post['title']
     return render_template('page.html', pagetitle=pagetitle,postcontent=html,post=post)
 
-@app.route("/test.html")
-def test():
-    return render_template('test.html')
-
 @app.route("/")
 def index():
     pagesize=app.config.get("FLATPAGES_ROOT_SIZE",2)
