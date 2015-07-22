@@ -1,6 +1,4 @@
 #coding=utf-8
-import codecs
-
 from flask import Flask, render_template,request
 import markdown
 from flask_flatpages import FlatPages
